@@ -1,4 +1,12 @@
 .news-feed {
+  // fix for safari
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    line-height: 1.2em;
+  }
   --carousel-sides: 104px;
   //104px is the 80px preview of the previous card and the 24px gap between cards
   //to align with the first fully-visible card.

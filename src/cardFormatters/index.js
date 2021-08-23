@@ -2,7 +2,10 @@ import "./styles.scss";
 
 const formatAsCard = (item) => {
   return (
-    <div className="col col-12 col-lg-4 cards-items-container" key={item.nid}>
+    <div
+      className="col col-12 col-md-6 col-lg-4 cards-items-container"
+      key={item.nid}
+    >
       <a href={item.path}>
         <div className="card card card-hover h-100">
           <img
