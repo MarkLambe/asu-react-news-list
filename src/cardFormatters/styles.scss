@@ -1,4 +1,15 @@
 .news-feed {
+  .cards-wrapper,
+  .horizontal-wrapper {
+    .cards-items-container {
+      a {
+        display: block;
+        height: 100%;
+        text-decoration: none;
+        color: #191919;
+      }
+    }
+  }
   .card {
     border: none;
     border: 1px solid #d0d0d0;
@@ -11,7 +22,7 @@
         height: auto;
       }
     }
-  
+
     .card-header {
       padding: 16px;
 
@@ -33,5 +44,5 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
-  }   
+  }
 }

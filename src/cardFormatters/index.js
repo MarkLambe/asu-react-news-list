@@ -1,10 +1,9 @@
-import { h } from "react";
 import "./styles.scss";
 
 const formatAsCard = (item) => {
   return (
-    <div className="col col-12 col-lg-4" key={item.nid}>
-      <button onClick={() => window.open(item.path, "_blank")}>
+    <div className="col col-12 col-lg-4 cards-items-container" key={item.nid}>
+      <a href={item.path}>
         <div className="card card card-hover h-100">
           <img
             className="card-img-top"
@@ -28,15 +27,15 @@ const formatAsCard = (item) => {
             })}
           </div>
         </div>
-      </button>
+      </a>
     </div>
   );
 };
 
 const formatAsCardRow = (item) => {
   return (
-    <div className="card card-hover" key={item.nid}>
-      <button onClick={() => window.open(item.path, "_blank")}>
+    <div className="card card-hover cards-items-container" key={item.nid}>
+      <a href={item.path}>
         <div className="row no-gutters">
           <div className="col-md-4">
             <img
@@ -56,7 +55,7 @@ const formatAsCardRow = (item) => {
             </div>
           </div>
         </div>
-      </button>
+      </a>
     </div>
   );
 };
