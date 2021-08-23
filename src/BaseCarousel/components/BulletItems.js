@@ -1,5 +1,5 @@
 // @ts-check
-import React, { h } from 'react';
+import React from "react";
 import PropTypes from "prop-types";
 
 /**
@@ -12,14 +12,17 @@ const BaseBulletItemContainer = ({ children }) => (
     className="glide__bullets"
     data-glide-el="controls[nav]"
     // this is needed when the children is provided
-    onClick={e => e.stopImmediatePropagation()}
+    onClick={(e) => e.stopPropagation()}
   >
     {children}
   </div>
 );
 
 BaseBulletItemContainer.propTypes = {
-  children: PropTypes.object.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.element),
+  ]).isRequired,
 };
 
 /**
@@ -61,7 +64,7 @@ const ImageBulletItems = ({ imageItems, onItemClick = () => null }) => {
       className={"glide__bullet bullet-image"}
       data-glide-dir={`=${i}`}
       aria-label={`Slide view ${i + 1}`}
-      onClick={e => {
+      onClick={(e) => {
         e.stopPropagation();
         onItemClick(i);
       }}

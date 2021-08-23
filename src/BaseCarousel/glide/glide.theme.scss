@@ -13,7 +13,8 @@ $uds-color-brand-gold: #ffc627; // ASU Gold brand color
 
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  //`gap` it does not work i  Safari. it need display `grid` to work
+  // gap: 32px;
   // Gradient variations wired up to js in component.
   // .glide.slider-start::after rule w/o "to right"
   // .glide.slider-mid::after rule w/ both
@@ -80,9 +81,6 @@ $uds-color-brand-gold: #ffc627; // ASU Gold brand color
       top: 0;
     }
   }
-  
-
-
 
   $se: $glide-element-separator;
   $sm: $glide-modifier-separator;
@@ -95,7 +93,7 @@ $uds-color-brand-gold: #ffc627; // ASU Gold brand color
   &#{$se}arrows {
     z-index: 2;
     align-self: center;
-
+    margin-top: 32px;
     //&#{$se}arrow {
     .glide__arrow {
       color: #191919;
@@ -123,12 +121,16 @@ $uds-color-brand-gold: #ffc627; // ASU Gold brand color
         height: 1.25rem;
         position: relative;
         bottom: 0.125rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
       }
 
       @supports (-webkit-touch-callout: none) {
-        /* CSS specific to iOS devices */ 
+        /* CSS specific to iOS devices */
         svg {
-          right: 0.25rem;        }
+          right: 0.25rem;
+        }
       }
 
       &.glide__arrow--prev {
@@ -166,6 +168,7 @@ $uds-color-brand-gold: #ffc627; // ASU Gold brand color
     max-width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 32px;
   }
 
   &#{$se}bullet {
