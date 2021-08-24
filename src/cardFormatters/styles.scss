@@ -2,17 +2,45 @@
   .cards-wrapper,
   .horizontal-wrapper {
     .cards-items-container {
-      a {
+      a:not(.read-more-btn) {
         display: block;
         height: 100%;
         text-decoration: none;
         color: #191919;
+      }
+      .button-container {
+        padding-left: 32px;
+        padding-right: 32px;
+        .read-more-btn {
+          width: max-content;
+        }
+        @media (max-width: 992px) {
+          padding-left: 24px;
+          padding-right: 24px;
+        }
+      }
+      .row-cards-body-container {
+        @media (max-width: 992px) {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .button-container {
+          @media (max-width: 992px) {
+            padding-left: 10px;
+            padding-right: 10px;
+          }
+        }
       }
     }
   }
   .card {
     border: none;
     border: 1px solid #d0d0d0;
+
+    .card-img {
+      object-fit: cover;
+      border-radius: 0 !important;
+    }
 
     .card-img-top {
       padding: none;

@@ -38,7 +38,6 @@ a:focus {
   justify-content: left;
   align-items: center;
   height: 100%;
-  max-width: 75%;
 }
 
 .text-muted {
@@ -51,17 +50,6 @@ a:focus {
   right: 80px;
   background-color: white;
   max-height: inherit;
-}
-
-@media only screen and (max-width: 600px) {
-  .list-view.card-title {
-    padding: 10px;
-    right: 0;
-    background-color: white;
-    max-height: 100%;
-    font-size: 100%;
-    text-align: left;
-  }
 }
 
 /* loading animation */
@@ -88,4 +76,15 @@ a:focus {
 
 .errorCode {
   color: #eeeeee;
+}
+
+@media only screen and (max-width: 992px) {
+  .list-view.card-title {
+    padding: 10px;
+    right: 0;
+    background-color: white;
+    max-height: 100%;
+    font-size: 100%;
+    text-align: left;
+  }
 }
