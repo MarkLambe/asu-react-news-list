@@ -1,6 +1,6 @@
 import "./styles.scss";
 
-const formatAsCard = (item) => {
+const formatAsCard = (item, cardsButtonsColor) => {
   return (
     <div
       className="col col-12 col-md-6 col-lg-4 cards-items-container"
@@ -29,32 +29,52 @@ const formatAsCard = (item) => {
               );
             })}
           </div>
+          <div className="button-container">
+            <a
+              className={`btn btn-${
+                cardsButtonsColor || "maroon"
+              } text-white read-more-btn`}
+              href={item.path}
+            >
+              Read at ASU News
+            </a>
+          </div>
         </div>
       </a>
     </div>
   );
 };
 
-const formatAsCardRow = (item) => {
+const formatAsCardRow = (item, cardsButtonsColor) => {
   return (
     <div className="card card-hover cards-items-container" key={item.nid}>
       <a href={item.path}>
         <div className="row no-gutters">
-          <div className="col-md-4">
+          <div className="col-lg-4">
             <img
               className="card-img h-100"
               src={item.image_url}
               alt={item.image_alt}
             />
           </div>
-          <div className="col-md-8">
-            <div className="list-view card-body">
+          <div className="col-lg-8">
+            <div className="list-view card-body row-cards-body-container">
               <h3 className="list-view card-title">
                 {item.title}
-                <p className="card-text text-muted">
+                <p className="card-text text-muted m-0">
                   {item.interests.split("|").join(", ")}
                 </p>
               </h3>
+              <div className="button-container">
+                <a
+                  className={`btn btn-${
+                    cardsButtonsColor || "maroon"
+                  } text-white read-more-btn`}
+                  href={item.path}
+                >
+                  Read at ASU News
+                </a>
+              </div>
             </div>
           </div>
         </div>

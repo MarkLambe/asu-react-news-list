@@ -112,7 +112,11 @@ class NewsDisplay extends Component {
           <div className="news-feed">
             <div className="cards-wrapper">
               {headerSection}
-              <D8News newsItems={newsItems.map(formatAsCard)} />
+              <D8News
+                newsItems={newsItems.map((item) =>
+                  formatAsCard(item, this.props.data.cardsButtonsColor)
+                )}
+              />
             </div>
           </div>
         ),
@@ -120,7 +124,11 @@ class NewsDisplay extends Component {
           <div className="news-feed">
             <div className="horizontal-wrapper">
               {headerSection}
-              <D8News newsItems={newsItems.map(formatAsCardRow)} />
+              <D8News
+                newsItems={newsItems.map((item) =>
+                  formatAsCardRow(item, this.props.data.cardsButtonsColor)
+                )}
+              />
             </div>
           </div>
         ),
