@@ -1,6 +1,6 @@
 // @ts-check
-import React, { h } from 'react';
 import PropTypes from "prop-types";
+import React from "react";
 
 /**
  *
@@ -12,7 +12,7 @@ import PropTypes from "prop-types";
  */
 const SliderItems = ({ carouselItems }) => {
   // Setup carousel items from the carouselItems prop.
-  const listItems = carouselItems.map(sliderItem => (
+  const listItems = carouselItems.map((sliderItem) => (
     <li key={sliderItem.id.toString()} className="glide__slide slider">
       {sliderItem.item}
     </li>
