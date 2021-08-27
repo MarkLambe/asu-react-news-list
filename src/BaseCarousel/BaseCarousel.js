@@ -1,6 +1,6 @@
 // @ts-check
 
-import React, { h, Fragment, useEffect } from "react";
+import React, { Fragment, useEffect } from "react";
 import PropTypes from "prop-types";
 
 // Include required and custom styles for @glidejs/glide
@@ -79,6 +79,7 @@ const BaseCarousel = ({
       className={`glide ${cssClass}`}
       id={instanceName}
       style={{ width, maxWidth }}
+      data-has-shadow="true"
     >
       <div className="glide__track" data-glide-el="track">
         <SliderItems carouselItems={carouselItems} />
@@ -91,10 +92,10 @@ const BaseCarousel = ({
           instanceName={instanceName}
         />
       ) : (
-        <React.Fragment>
+        <Fragment>
           <BulletItems buttonCount={buttonCount} />
           <NavButtons />
-        </React.Fragment>
+        </Fragment>
       )}
     </div>
   );
